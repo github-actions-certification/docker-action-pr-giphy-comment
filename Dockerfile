@@ -11,5 +11,8 @@ COPY ./entrypoint.sh /entrypoint.sh
 # Make the script executable
 RUN chmod +x /entrypoint.sh
 
+# Verify the file was copied
+RUN ls -l /entrypoint.sh
+
 # Code file to execute when the docker container starts up ('entrypoint.sh')
 ENTRYPOINT [ "/entrypoint.sh" ]
