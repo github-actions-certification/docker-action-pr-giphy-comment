@@ -6,13 +6,13 @@ RUN apk update && \
     apk add --no-cach curl jq
 
 # Copy your entrypoint script to the container file path
-COPY ./test.sh /test.sh
+COPY ./test.sh /tmp/test.sh
 
 # Make the script executable
-RUN chmod +x /test.sh
+RUN chmod +x /tmp/test.sh
 
 # Verify the file was copied
-RUN ls -l /test.sh
+RUN ls -l /tmp/test.sh
 
 # Code file to execute when the docker container starts up ('entrypoint.sh')
-ENTRYPOINT [ "/test.sh" ]
+ENTRYPOINT [ "/tmp/test.sh" ]
