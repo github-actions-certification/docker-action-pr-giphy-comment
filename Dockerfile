@@ -12,7 +12,8 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Verify the file was copied
-RUN ls -l /entrypoint.sh
+RUN ls -la /entrypoint.sh
+RUN cat /etc/passwd
 
 # Code file to execute when the docker container starts up ('entrypoint.sh')
 ENTRYPOINT [ "echo", "'Hello World!'" ]
